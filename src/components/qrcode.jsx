@@ -8,7 +8,7 @@ const QRcode = ({ url }) => {
   let qrcode = new QrCodeWithLogo({
     canvas: canvasRef.current,
     content: url,
-    width: 320,
+    width: 180,
     //   download: true,
     logo: {
       src: alienSVG,
@@ -24,10 +24,15 @@ const QRcode = ({ url }) => {
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center ml-2 bg-white p-4">
       <canvas ref={canvasRef} />
-      <button onClick={handleClick}>Download</button>
-    </>
+      <button
+        className="w-fit px-4 py-2 bg-green-400 text-white font-medium rounded-sm cursor-pointer"
+        onClick={handleClick}
+      >
+        Download
+      </button>
+    </div>
   );
 };
 

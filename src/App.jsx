@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Submit from "./components/Submit";
 import QRcode from "./components/qrcode";
+import Navbar from "./components/navbar";
 
 function App() {
   const [URL, setURL] = useState("");
@@ -9,8 +10,11 @@ function App() {
   };
   return (
     <>
-      <Submit getURL={getURL}></Submit>
-      <QRcode url={URL}></QRcode>
+      <Navbar></Navbar>
+      <div className="flex justify-center mx-auto mt-10">
+        <Submit getURL={getURL}></Submit>
+        <QRcode url={URL}></QRcode>
+      </div>
     </>
   );
 }

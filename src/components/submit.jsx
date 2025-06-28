@@ -16,10 +16,16 @@ const Submit = ({ getURL }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="grow max-w-2xl bg-white">
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col max-w-2xl p-4  
+      "
+      >
         <label htmlFor="URL">URL: </label>
-        <input
+        <textarea
+          className="p-2 text-3xl resize-none outline-none"
+          placeholder="Paste your URL here..."
           value={URL}
           type="text"
           id="URL"
@@ -27,7 +33,12 @@ const Submit = ({ getURL }) => {
           onChange={handleURLChange}
           required
         />
-        <button type="submit">Submit</button>
+        <button
+          type="submit"
+          className="w-fit px-4 py-2 bg-blue-400 text-white font-medium rounded-sm cursor-pointer"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
