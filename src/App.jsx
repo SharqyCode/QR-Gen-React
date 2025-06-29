@@ -4,16 +4,16 @@ import QRcode from "./components/qrcode";
 import Navbar from "./components/navbar";
 
 function App() {
-  const [URL, setURL] = useState("");
-  const getURL = (url) => {
-    setURL(url);
+  const [options, setOptions] = useState({});
+  const getOptions = (options) => {
+    setOptions(options);
   };
   return (
     <>
       <Navbar></Navbar>
       <div className="flex justify-center mx-auto mt-10">
-        <Submit getURL={getURL}></Submit>
-        <QRcode url={URL}></QRcode>
+        <Submit getOptions={getOptions}></Submit>
+        <QRcode options={options}></QRcode>
       </div>
     </>
   );
